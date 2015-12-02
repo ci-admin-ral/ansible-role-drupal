@@ -1,0 +1,20 @@
+---
+- name: Check if site is installed.
+  command: >
+    {{ drush_path }} st bootstrap
+    chdir={{ drupal_core_path }}
+  register: drupal_site_installed
+  failed_when: false
+  changed_when: false
+  sudo: no
+
+- name: Install site with drush.
+  command: >
+    {{ drush_path }} si {{ drupal_install_profile }} -y
+    --site-name="{{ drupal_site_name }}"
+    --account-name={{ drupal_admin_username }}
+    --account-pass={{ drupal_admin_password }}
+    chdir={{ drupal_core_path }}
+  notify: restart webserver
+  when: "'Successful' not in drupal_site_installed.stdout"
+  sudo: no

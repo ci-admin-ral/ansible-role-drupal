@@ -1,0 +1,29 @@
+---
+- name: Ensure directories are 0750.
+  command: find "{{ drupal_core_path }}" -type d -exec chmod 0750 {} \;
+
+- name: Ensure files are 0640.
+  command: find "{{ drupal_core_path }}" -type f -exec chmod 0640 {} \;
+
+- name: Set files directory permissions.
+  file:
+    path: "{{ drupal_core_path }}/sites/default/files"
+    state: directory
+    mode: 0770
+
+- name: Set site settings.php permissions.
+  file:
+    path: "{{ drupal_core_path }}/sites/default/settings.php"
+    state: file
+    mode: 0440
+
+- name: Set site directory owner/group.
+  file:
+    path: "{{ drupal_core_path }}"
+    state: directory
+    owner: "{{ drupal_core_path_owner }}"
+    group: "{{ drupal_core_path_group }}"
+    recurse: yes
+
+- name: Restore SELinux security contexts.
+  command: restorecon -Rv "{{ drupal_core_path }}"

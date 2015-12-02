@@ -1,0 +1,30 @@
+---
+# Administrator user,pass.
+drupal_admin_username: admin
+drupal_admin_password: admin
+
+# Website directory.
+drupal_core_path: /var/www/html
+drupal_core_path_owner: www-data
+drupal_core_path_group: www-data
+
+# Profile install options.
+drupal_install_site: false
+drupal_install_profile: minimal
+drupal_domain: drupal.dev
+drupal_site_name: Drupal
+
+# Drush build makefile.
+drupal_makefile_build: true
+drupal_makefile_file_path: drupal.make.yml
+
+# Drupal settings.
+drupal_settings_template_path: settings.php.j2
+drupal_settings_hash_salt: 3bqNy7ia_UDClJ1hqSqu2iJfc5c8DF2uIpA-K1aAcTs
+drupal_settings_database:
+  host: localhost
+  database: drupal
+  username: drupal
+  password: drupal
+  driver: mysql
+  prefix: ""

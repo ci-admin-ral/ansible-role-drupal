@@ -1,0 +1,28 @@
+---
+- name: Ensure site directory exists.
+  file:
+    path: "{{ drupal_core_path }}"
+    state: directory
+    mode: 0750
+    owner: "{{ drupal_core_path_owner }}"
+    group: "{{ drupal_core_path_group }}"
+
+- name: Copy drush makefile.
+  copy:
+    src: "{{ drupal_makefile_file_path }}"
+    dest: /tmp/drupal.make.yml
+    mode: 0644
+  sudo: no
+
+- name: Generate site with drush.
+  command: >
+    {{ drush_path }} make -y /tmp/drupal.make.yml --no-gitinfofile
+    chdir={{ drupal_core_path }}
+  sudo: no
+
+- name: Create site settings.php file.
+  template:
+    src: "{{ drupal_settings_template_path }}"
+    dest: "{{ drupal_core_path }}/sites/default/settings.php"
+    mode: 0644
+  sudo: no

@@ -1,0 +1,14 @@
+---
+- name: Check if site is already set up.
+  stat:
+    path: "{{ drupal_core_path }}/index.php"
+  register: drupal_site
+
+- include: build.yml
+  when: drupal_makefile_build and (drupal_site.stat.exists == false)
+
+- include: install.yml
+  when: drupal_install_site
+
+- include: secure.yml
+  when: drupal_site.stat.exists == false
