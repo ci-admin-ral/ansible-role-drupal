@@ -9,7 +9,7 @@ drupal_admin_username: admin
 drupal_admin_password: admin
 
 # Profile install
-drupal_install_site: false
+drupal_install_site: true
 drupal_install_profile: minimal
 drupal_domain: drupal.dev
 drupal_site_name: Drupal
