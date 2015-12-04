@@ -24,6 +24,3 @@
     owner: "{{ drupal_core_path_owner }}"
     group: "{{ drupal_core_path_group }}"
     recurse: yes
-
-- name: Restore SELinux security contexts.
-  command: restorecon -Rv "{{ drupal_core_path }}"
