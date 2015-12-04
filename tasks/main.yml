@@ -1,7 +1,6 @@
 ---
 - name: Check if site is already set up.
-  stat:
-    path: "{{ drupal_core_path }}/index.php"
+  stat: path={{ drupal_core_path }}/index.php
   register: drupal_site
 
 - include: build.yml

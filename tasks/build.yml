@@ -3,9 +3,9 @@
   file:
     path: "{{ drupal_core_path }}"
     state: directory
-    mode: 0750
     owner: "{{ drupal_core_path_owner }}"
     group: "{{ drupal_core_path_group }}"
+    mode: 0750
 
 - name: Copy drush makefile.
   copy:
