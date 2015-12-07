@@ -1,30 +1,28 @@
 # Ansible Role: Drupal
 
-Installs and configures Drupal.
+[![Build Status](https://img.shields.io/travis/rwanyoike/ansible-role-drupal.svg)](https://travis-ci.org/rwanyoike/ansible-role-drupal) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rwanyoike/ansible-role-drupal/master/LICENSE)
 
-[Drupal](https://www.drupal.org) is an open source content management platform
-supporting a variety of websites ranging from personal weblogs to large
-community-driven websites.
+Installs and configures [Drupal](https://www.drupal.org/) on RHEL/CentOS ~~or Debian/Ubuntu~~.
 
 ## Requirements
 
-None.
+None
 
 ## Role Variables
 
-TODO.
+**FIXME!**
 
 ## Dependencies
 
-TODO.
+**FIXME!**
 
 ## Example Playbook
 
-TODO.
+**FIXME!**
 
 ## License
 
-MIT.
+MIT
 
 ## Author Information
 
