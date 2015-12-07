@@ -1,25 +1,19 @@
 ---
-# Website directory
-drupal_core_path: /var/www/html
-drupal_core_path_owner: www-data
-drupal_core_path_group: www-data
+drupal_core_dir: /var/www/html
 
-# Administrator user,pass
-drupal_admin_username: admin
-drupal_admin_password: admin
+drupal_user: www-data
+drupal_group: www-data
 
-# Profile install
-drupal_install_site: true
-drupal_install_profile: minimal
-drupal_domain: drupal.dev
-drupal_site_name: Drupal
-
-# Drush build makefile
 drupal_makefile_build: true
-drupal_makefile_file_path: drupal.make.yml
+drupal_makefile_file: drupal.make.yml
 
-# Drupal settings
-drupal_settings_template_path: settings.php.j2
+drupal_profile_install: true
+drupal_profile: minimal
+drupal_profile_site_name: Drupal
+drupal_profile_user: admin
+drupal_profile_pass: admin
+
+drupal_settings_use_template: true
 drupal_settings_hash_salt: 3bqNy7ia_UDClJ1hqSqu2iJfc5c8DF2uIpA-K1aAcTs
 drupal_settings_database:
   host: localhost
