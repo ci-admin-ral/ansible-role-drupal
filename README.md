@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/rwanyoike/ansible-role-drupal.svg)](https://travis-ci.org/rwanyoike/ansible-role-drupal) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rwanyoike/ansible-role-drupal/master/LICENSE)
 
-Installs and configures [Drupal](https://www.drupal.org/) on RHEL/CentOS ~~or Debian/Ubuntu~~.
+Installs and configures Drupal on RHEL/CentOS ~~or Debian/Ubuntu~~.
 
 ## Requirements
 
@@ -10,15 +10,56 @@ None
 
 ## Role Variables
 
-**FIXME!**
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+
+```yaml
+drupal_core_dir: /var/www/html/drupal
+drupal_core_owner: www-data
+drupal_core_group: www-data
+
+drupal_makefile_file: drupal.make.yml
+drupal_makefile_force: false
+
+drupal_profile_install: true
+drupal_profile: minimal
+drupal_profile_site_name: Drupal
+drupal_profile_user: admin
+drupal_profile_pass: hackme
+
+drupal_settings_use_template: true
+drupal_settings_hash_salt: 3bqNy7ia_UDClJ1hqSqu2iJfc5c8DF2uIpA-K1aAcTs
+drupal_settings_database:
+  host: localhost
+  database: drupal
+  username: root
+  password: hackme
+  driver: mysql
+  prefix: ""
+```
 
 ## Dependencies
 
-**FIXME!**
+- rwanyoike.drush (https://github.com/rwanyoike/ansible-role-drush)
 
 ## Example Playbook
 
-**FIXME!**
+```yaml
+- hosts: servers
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - role: rwanyoike.drupal
+```
+
+Inside `vars/main.yml`:
+
+```yaml
+drupal_profile_site_name: Hello World
+
+# ... etc ...
+```
 
 ## License
 
@@ -26,4 +67,4 @@ MIT
 
 ## Author Information
 
-This role was created in 2015 by [Raymond Wanyoike](https://github.com/rwanyoike).
+- This role was created in 2015 by [Raymond Wanyoike](https://github.com/rwanyoike).
