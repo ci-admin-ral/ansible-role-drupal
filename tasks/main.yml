@@ -28,7 +28,7 @@
   file:
     path: "{{ drupal_core_dir }}/sites/default/settings.php"
     state: file
-    mode: 0400
+    mode: 0440
   when: drupal_settings_use_template
 
 - name: Set Drupal site dir permissions.
