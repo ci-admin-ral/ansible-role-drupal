@@ -1,5 +1,5 @@
 ---
-- name: Check Drupal bootstrap.
+- name: check drupal bootstrap
   command: >
     {{ drush_exec }} st bootstrap
     chdir={{ drupal_core_dir }}
@@ -7,7 +7,7 @@
   failed_when: false
   changed_when: false
 
-- name: Install Drupal profile.
+- name: install drupal profile
   command: >
     {{ drush_exec }} si {{ drupal_profile }} -y
     --site-name="{{ drupal_profile_site_name }}"

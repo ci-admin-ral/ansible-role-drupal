@@ -1,11 +1,11 @@
 ---
-# Core version of Drupal.
+# Core version of Drupal
 core: 7.x
-# Drush Make API version.
+# Drush Make API version
 api: 2
 
-# Projects (e.g. modules, themes, libraries, and drupal) to be retrieved.
+# Projects (e.g. modules, themes, libraries, and drupal) to be retrieved
 projects:
   drupal:
-    # Picks the latest release.
+    # Picks the latest release
     version: ~

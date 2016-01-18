@@ -17,7 +17,7 @@ drupal_settings_hash_salt: 3bqNy7ia_UDClJ1hqSqu2iJfc5c8DF2uIpA-K1aAcTs
 drupal_settings_database:
   host: localhost
   database: drupal
-  username: drupal
+  username: root
   password: hackme
   driver: mysql
   prefix: ""

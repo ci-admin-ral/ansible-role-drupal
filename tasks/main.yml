@@ -1,37 +1,31 @@
 ---
-- name: Check Drupal index.php.
+- name: check drupal index.php
   stat: path={{ drupal_core_dir }}/index.php
   register: drupal_site
 
-- name: Create Drupal site dir.
-  file: path="{{ drupal_core_dir }}" state=directory
+- name: create drupal site dir
+  file: path={{ drupal_core_dir }} state=directory
 
-- name: Copy Drupal makefile.
+- name: copy drupal makefile
   copy: src={{ drupal_makefile_file }} dest=/tmp/drupal.make.yml
 
-- name: Build Drupal makefile.
+- name: build drupal makefile
   command: >
     {{ drush_exec }} make -y /tmp/drupal.make.yml --no-gitinfofile
     chdir={{ drupal_core_dir }}
   when: (drupal_site.stat.exists == false) or drupal_makefile_force
 
-- name: Copy Drupal settings.php.
+- name: copy drupal settings.php
   template:
     src: settings.php.j2
     dest: "{{ drupal_core_dir }}/sites/default/settings.php"
+    mode: 0440
   when: drupal_settings_use_template
 
 - include: profile_install.yml
   when: drupal_profile_install
 
-- name: Set Drupal settings.php permissions.
-  file:
-    path: "{{ drupal_core_dir }}/sites/default/settings.php"
-    state: file
-    mode: 0440
-  when: drupal_settings_use_template
-
-- name: Set Drupal site dir permissions.
+- name: set drupal site dir permissions
   file:
     path: "{{ drupal_core_dir }}"
     state: directory
