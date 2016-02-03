@@ -39,7 +39,7 @@ drupal_settings_database:
 
 ## Dependencies
 
-- rwanyoike.drush (https://github.com/rwanyoike/ansible-role-drush)
+- ansible-role-drush (https://github.com/thestarkenya/ansible-role-drush)
 
 ## Example Playbook
 
@@ -50,7 +50,7 @@ drupal_settings_database:
     - vars/main.yml
 
   roles:
-    - role: rwanyoike.drupal
+    - role: ansible-role-drupal
 ```
 
 Inside `vars/main.yml`:
@@ -64,7 +64,3 @@ drupal_profile_site_name: Hello World
 ## License
 
 MIT
-
-## Author Information
-
-- This role was created in 2015 by [Raymond Wanyoike](https://github.com/rwanyoike).
