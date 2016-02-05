@@ -1,6 +1,6 @@
 # Ansible Role: Drupal
 
-[![Build Status](https://img.shields.io/travis/rwanyoike/ansible-role-drupal.svg)](https://travis-ci.org/rwanyoike/ansible-role-drupal) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rwanyoike/ansible-role-drupal/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/thestarkenya/ansible-role-drupal.svg)](https://travis-ci.org/thestarkenya/ansible-role-drupal) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/thestarkenya/ansible-role-drupal/master/LICENSE)
 
 Installs and configures Drupal on RHEL/CentOS ~~or Debian/Ubuntu~~.
 
